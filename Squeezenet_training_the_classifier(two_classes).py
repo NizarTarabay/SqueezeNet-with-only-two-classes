@@ -6,7 +6,6 @@ from torchvision import datasets, transforms, models
 
 data_dir = 'Cat_Dog_data'
 
-# TODO: Define transforms for the training data and testing data
 train_transforms = transforms.Compose([transforms.RandomRotation(30),
                                        transforms.RandomResizedCrop(224),
                                        transforms.RandomHorizontalFlip(),
@@ -20,7 +19,6 @@ test_transforms = transforms.Compose([transforms.Resize(255),
                                       transforms.Normalize([0.485, 0.456, 0.406],
                                                            [0.229, 0.224, 0.225])])
 
-# Pass transforms in here, then run the next cell to see how the transforms look
 train_data = datasets.ImageFolder(data_dir + '/train', transform=train_transforms)
 test_data = datasets.ImageFolder(data_dir + '/test', transform=test_transforms)
 
